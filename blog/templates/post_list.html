@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Posts</title>
+</head>
+
+<body>
+  <h1>Blog Posts</h1>
+
+  <h4>Login</h4>
+  <a href="/auth/login">Login Here</a>
+
+  <h4>Sign Up</h4>
+  <a href="/auth/signup">Sign Up Here</a>
+
+  <ul>
+    {% for post in posts %}
+    <li>
+      <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+      <p>{{ post.body }}</p>
+    </li>
+
+    {% endfor %}
+
+  </ul>
+
+</body>
+
+</html>
